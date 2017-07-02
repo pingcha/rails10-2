@@ -33,7 +33,7 @@
           <%= link_to(group.title, group_path(group)) %>
         </td>
         <td>
-          <%= group.description %>
+          <%= render_group_description(group) %>
         </td>
         <td>
           <%= group.posts.count %>
