@@ -2,10 +2,6 @@ class PostsController < ApplicationController
 
   before_action :authenticate_user!, :only => [:new, :create]
 
-  def index
-    @posts = Post.all
-  end
-
   def new
     @group = Group.find(params[:group_id])
     @post = Post.new
@@ -28,7 +24,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:heading, :content)
   end
 
 end

@@ -56,7 +56,7 @@ class GroupsController < ApplicationController
   end
 
   def quit
-    @group = Group_path(@group)
+    @group = Group.find(params[:id])
 
     if current_user.is_member_of?(@group)
       current_user.quit!(@group)
