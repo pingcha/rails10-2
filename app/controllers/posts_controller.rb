@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:group_id])
+    @group = Group.find(params[:group_id])
   end
 
   def new
@@ -32,6 +32,15 @@ class PostsController < ApplicationController
     end
   end
 
+  #def update
+  #  @group = Group.find(params[:group_id])
+
+  #  if @post.update(post_params)
+  #    redirect_to group_post_path, notice: "Update Success"
+  #  else
+  #    render :edit
+  #  end
+  #end
 
   private
 

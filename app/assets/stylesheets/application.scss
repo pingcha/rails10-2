@@ -255,9 +255,14 @@ footer {
 footer .footer-below {
    padding: 25px 0;
    background-color: #0D46A6;
+   margin-bottom: 0px;
 }
 
 footer .footer-below > .text-center > a:hover,
 footer .footer-below > .text-center > a:focus {
  color: #FFE67D;
 }
+
+html { height: 100%;}
+  body { min-height: 100%; display: flex; flex-direction: column;}
+  .content { flex: 1;}
