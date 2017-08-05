@@ -27,6 +27,7 @@
                        <li>
                          <%= link_to("My Posts", account_posts_path) %>
                        </li>
+                       <li><%= link_to('修改个人资料', edit_user_path) %></li>
                        <li class="divider"> </li>
                        <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
                    </ul>

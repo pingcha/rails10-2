@@ -6,4 +6,7 @@ class Post < ApplicationRecord
   validates :heading, presence: true
 
   scope :recent, -> { order("created_at DESC")}
+
+    STATUS = ["draft", "public", "private"]
+    validates_inclusion_of :status, :in => STATUS
 end

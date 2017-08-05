@@ -12,6 +12,18 @@ class PostsController < ApplicationController
 
   def edit
     @group = Group.find(params[:group_id])
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:group_id])
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to account_posts_path, notice: "Updated Success"
+    else
+      render :edit
+    end
   end
 
   def new
@@ -32,20 +44,20 @@ class PostsController < ApplicationController
     end
   end
 
-  #def update
-  #  @group = Group.find(params[:group_id])
+  def destroy
+    @group = Group.find(params[:group_id])
+    @post = Post.find(params[:id])
 
-  #  if @post.update(post_params)
-  #    redirect_to group_post_path, notice: "Update Success"
-  #  else
-  #    render :edit
-  #  end
-  #end
+    @post.destroy
+    redirect_to account_posts_path
+    flash[:alert] = "Post deleted"
+  end
+
 
   private
 
   def post_params
-    params.require(:post).permit(:heading, :content)
+    params.require(:post).permit(:heading, :content, :status)
   end
 
 end

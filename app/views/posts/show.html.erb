@@ -1,7 +1,17 @@
-<div class="col-md-12">
-  <div class="group">
-    <%= link_to("Edit", edit_group_post_path(@post), class: "btn btn-primary pull-right")%>
-  </div>
-  <h2><%= @post.heading %></h2>
-  <p><%= simple_format(@post.content) %></p>
+<div class="panel-default col-md-8 col-md-offset-2">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="panel-default col-md-12">
+                <h3><%= @post.heading %></h3>
+            </div>
+
+        </div>
+        <h2><%= t(@post.status, :scope => "post.status") %></h2>
+    </div>
+    <div class="panel-body">
+        <div class="trix-content">
+            <p> <%= simple_format(@post.content) %> </p>
+        </div>
+    </div>
+
 </div>
