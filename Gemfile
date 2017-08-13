@@ -40,6 +40,7 @@ gem 'will_paginate'
 gem "rails-i18n"
 gem "devise-i18n"
 gem 'bootstrap-datepicker-rails'
+gem 'ckeditor'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

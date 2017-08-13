@@ -18,4 +18,5 @@
 //= require bootstrap/modal
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN
+//= require ckeditor/init
 //= require_tree .
