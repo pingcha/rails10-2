@@ -5,6 +5,11 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validates :heading, presence: true
 
+  def to_param
+    "#{self.id}-#{self.heading}"
+  end
+
+
   scope :recent, -> { order("created_at DESC")}
 
     STATUS = ["draft", "public", "private"]

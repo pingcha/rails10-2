@@ -1,7 +1,9 @@
 "zh-CN":
+  hello: "亲～ %{name} 你好："
   groups: 讨论组
-  admin:
-    My group: 我的讨论组
+  account:
+    group_relationships: 我的讨论组
+    posts : 我发表过的文章
   post:
     status:
       draft: 草稿

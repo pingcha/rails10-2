@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805072432) do
+ActiveRecord::Schema.define(version: 20170811112927) do
 
   create_table "group_relationships", force: :cascade do |t|
     t.integer  "group_id"
@@ -31,10 +31,12 @@ ActiveRecord::Schema.define(version: 20170805072432) do
     t.text     "content"
     t.integer  "group_id"
     t.integer  "user_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "heading"
-    t.string   "status",     default: "draft"
+    t.string   "status",      default: "draft"
+    t.string   "friendly_id"
+    t.index ["friendly_id"], name: "index_posts_on_friendly_id", unique: true
   end
 
   create_table "profiles", force: :cascade do |t|

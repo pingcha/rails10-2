@@ -20,7 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 "en":
-  hello: "Hello world"
-  group: group
-  admin:
-    My group: Admin My Group
+  hello: "Hi %{name},"
+  groups: Groups
+  account:
+    group_relationships: My Groups
+    posts : My posts

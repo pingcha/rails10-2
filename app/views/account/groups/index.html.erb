@@ -1,13 +1,10 @@
 <div class="col-md-12">
 
-  <h2 class="text-center"> 我加入的讨论版 </h2>
+  <h2 class="text-center"> <%= t("account.group_relationships") %> </h2>
 
   <table class="table">
     <thead>
       <tr>
-        <th>
-          #
-        </th>
         <th>
           Title
         </th>
@@ -26,9 +23,6 @@
     <tbody>
       <% @groups.each do |group| %>
       <tr>
-        <td>
-          #
-        </td>
         <td>
           <%= link_to(group.title, group_path(group)) %>
         </td>

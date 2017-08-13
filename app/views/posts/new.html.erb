@@ -12,15 +12,12 @@
     <div class="form-group">
       <%= f.label :status %>
 
-      <div class="btn-group" data-toggle="buttons">
-        <% Post::STATUS.each do |status| %>
-          <label class="btn btn-default <%= (status == f.object.status)? 'active' : '' %>">
-            <%= f.radio_button :status, status %>
-            <%= t(status, :scope => "post.status") %>
-          </label>
-        <% end %>
-      </div>
-
+      <% Post::STATUS.each do |status| %>
+        <label>
+          <%= f.radio_button :status, status %>
+          <%= t(status, :scope => "post.status") %>
+        </label>
+      <% end %>
 
     </div>
     <div class="form-actions">
