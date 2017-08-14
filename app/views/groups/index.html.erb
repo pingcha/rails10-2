@@ -1,24 +1,46 @@
-<h2><%= t("groups") %></h2>
-<div class="col-md-12">
-  <div class="group">
-    <%= link_to("New group", new_group_path, class: "btn btn-warning btn-primary pull-right") %>
+<div class="container-fluid">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <h2 class="text-center pull-left" style="padding-left: 30px;"> <span class="glyphicon glyphicon-list-alt"> </span> <%= t("groups") %> </h2>
+
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="group" style="padding-right: 30px;">
+              <%= link_to("New group", new_group_path, class: "btn btn-warning btn-primary pull-right") %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-body table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="text-center"> Title </th>
+              <th class="text-center"> Description </th>
+              <th class="text-center"> Creator </th>
+              <th class="text-center"> Select</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <%= render :partial => "group_item", :collection => @groups, :as => :group %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-md-8">
+              </div>
+              <div class="col-md-4">
+              <p class="muted pull-right"><strong> © 2017 All rights reserved </strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <table class="table table/hover">
-    <thead>
-      <tr>
-        <td>
-          Title
-        </td>
-        <td>
-          Description
-        </td>
-        <td>
-          Creator
-        </td>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render :partial => "group_item", :collection => @groups, :as => :group %>
-    </tbody>
-  </table>
-</div>

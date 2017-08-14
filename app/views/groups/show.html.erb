@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="panel panel-default col-md-12">
   <div class="group">
 
     <span class="pull-right">
@@ -17,10 +17,12 @@
       <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary pull-right")%>
     <% end %>
   </div>
-  <h2><%= @group.title %></h2>
+  <h2 class="panel-heading"><%= @group.title %></h2>
+  <div class="panel-body">
   <p>
     <%= @group.description %>
   </p>
+  </div>
 
   <table class="table">
       <thead>
@@ -50,4 +52,5 @@
   <div class="text-center">
     <%= will_paginate @posts %>
   </div>
+  
 </div>
